@@ -92,3 +92,18 @@ sample_sd <- sqrt((0.10 * (1 - 0.10)) / 200)
 
 # calculate the probability
 pnorm(0.13, mean = 0.10, sd = sample_sd, lower.tail = FALSE)
+
+# Imagine we took a random sample of 200 people from London's general population, and a proportion of 0.13 of these people were hipsters.
+We however know that in the population of London, the proportion of hipsters is 0.10. What is the probability of finding a sample of 200 
+with a proportion of 0.13 or more hipsters?
+
+Let's break this problem into steps. Firstly we can calculate the standard deviation of the sampling distribution. The second step is using
+a function that may look familiar: pnorm(). Although we do not have a mean, we can use our sampling and population proportions. Our sampling
+proportion will constitute the q argument here, while our population proportion will constitute the mean argument. Now let's get going, what
+is the probability of finding a sample of 200 with a proportion of 0.13 or more hipsters?
+
+# calculate the standard deviation of the sampling distribution and put in a variable called sample_sd
+sample_sd <- sqrt(0.10*(1-0.10)/200)
+
+# calculate the probability
+pnorm(q = 0.13, mean = 0.10, sd = sample_sd, lower.tail = FALSE)
